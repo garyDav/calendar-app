@@ -9,13 +9,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.0",
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-big-calendar": "^1.5.2",
     "react-datetime-picker": "^4.1.1",
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",
+    "react-redux": "^8.0.5",
     "react-router-dom": "^6.4.3",
+    "redux": "^4.2.0",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.4.2",
     "sweetalert2": "^11.6.11"
   },
   "devDependencies": {
