@@ -10,7 +10,7 @@ import { CalendarModal } from './CalendarModal'
 import { AddNewFab } from '../ui/AddNewFab'
 import { DeleteEventFab } from '../ui/DeleteEventFab'
 import { uiOpenModal } from '../../actions/ui'
-import { eventSetActive } from '../../actions/events'
+import { eventClearActiveEvent, eventSetActive } from '../../actions/events'
 
 import 'moment/dist/locale/es-mx'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
@@ -39,6 +39,11 @@ export const CalendarScreen = () => {
     localStorage.setItem('lastView', e)
   }
 
+  const onSelectSlot = e => {
+    // console.log(e)
+    dispatch(eventClearActiveEvent())
+  }
+
   const eventStyleGetter = (event, start, end, isSelected) => {
     const style = {
       backgroundColor: '#367CF7',
@@ -65,6 +70,8 @@ export const CalendarScreen = () => {
         onDoubleClickEvent={onDoubleClick}
         onSelectEvent={onSelectEvent}
         onView={onViewChange}
+        onSelectSlot={onSelectSlot}
+        selectable={true}
         view={lastView}
         components={{
           event: CalendarEvent,
